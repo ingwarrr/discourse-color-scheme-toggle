@@ -29,8 +29,8 @@ export default class ColorSchemeToggler extends Component {
 
   get OSMode() {
     return getComputedStyle(document.body).getPropertyValue("--scheme-type")
-      ? "light";
-      : "dark"
+      ? "light"
+      : "dark";
   }
 
   @action
