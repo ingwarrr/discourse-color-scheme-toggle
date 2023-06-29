@@ -28,7 +28,7 @@ export default class ColorSchemeToggler extends Component {
   }
 
   get OSMode() {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
+    return getComputedStyle(document.body).getPropertyValue("--scheme-type")
       ? "dark"
       : "light";
   }
