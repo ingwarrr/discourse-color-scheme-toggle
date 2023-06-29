@@ -21,9 +21,9 @@ export default class ColorSchemeToggler extends Component {
   get toggleButtonIcon() {
     switch (this.OSMode) {
       case "dark":
-        return this.storedOverride === "light" ? "moon" : "sun";
+        return this.storedOverride === "light" ? "sun" : "moon";
       case "light":
-        return this.storedOverride === "dark" ? "sun" : "moon";
+        return this.storedOverride === "dark" ? "moon" : "sun";
     }
   }
 
@@ -35,6 +35,7 @@ export default class ColorSchemeToggler extends Component {
 
   @action
   toggleScheme() {
+    document.dispatchEvent(new CustomEvent("changeColorScheme", {detail: {schemeType: this.OSMode}, bubbles: true}));
     switch (this.OSMode) {
       case "light":
         if (this.keyValueStore.getItem(COLOR_SCHEME_OVERRIDE_KEY) === "dark") {
