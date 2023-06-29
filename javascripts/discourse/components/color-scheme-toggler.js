@@ -21,9 +21,9 @@ export default class ColorSchemeToggler extends Component {
   get toggleButtonIcon() {
     switch (this.OSMode) {
       case "dark":
-        return this.storedOverride === "light" ? "sun" : "moon";
+        return this.storedOverride === "light" ? "moon" : "sun";
       case "light":
-        return this.storedOverride === "dark" ? "moon" : "sun";
+        return this.storedOverride === "dark" ? "sun" : "moon";
     }
   }
 
